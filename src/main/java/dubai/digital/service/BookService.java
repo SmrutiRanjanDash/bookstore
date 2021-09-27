@@ -61,9 +61,9 @@ public class BookService {
 	}
 
 	public void deleteBookById(Long id) throws RecordNotFoundException {
-		Optional<BookEntity> employee = repository.findById(id);
+		Optional<BookEntity> book = repository.findById(id);
 
-		if (employee.isPresent()) {
+		if (book.isPresent()) {
 			repository.deleteById(id);
 		} else {
 			throw new RecordNotFoundException("No book record exist for given id");
