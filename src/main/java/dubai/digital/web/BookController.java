@@ -35,7 +35,7 @@ public class BookController
     }
  
     @PostMapping
-    public ResponseEntity<BookEntity> createOrUpdateEmployee(BookEntity book)
+    public ResponseEntity<BookEntity> createOrUpdateBook(BookEntity book)
                                                     throws RecordNotFoundException {
         BookEntity updated = service.createOrUpdateBook(book);
         return new ResponseEntity<BookEntity>(updated, new HttpHeaders(), HttpStatus.OK);
