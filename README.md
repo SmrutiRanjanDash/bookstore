@@ -19,18 +19,22 @@ Notes:
 Promotion/Discounts is variant according to book type/classification, ex: fiction books may have 10% discount while comic books have 0% discount.
 
 # How to Run
-This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or JBoss installation is necessary.
+This application is packaged as a war which has Tomcat 8 embedded.
 
 1. Clone this repository
 2. Make sure you are using JDK 1.8, Maven 3.x and IntelliJ/Eclipse
 3. You can import the project to IntelliJ, Configure and run the bookstore Application
 4. Once successfully built, you can run the service by one of these URLs:
 
+Note: h2 database has been used to persist the data.
+
   READ:GET
        - Get the list of Books: http://localhost:8080/book
        - Get a specific book: http://localhost:8080/book/{id}  Note: Please enter 1 or 2[Dummy Data]
-       
+  
+  
   CREATE/UPDATE: POST
+  
         - Pay Load: 
                   {
                   "name": "SpringBoot",
@@ -40,5 +44,11 @@ This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or 
                   "Price": 100.00,
                   "isbn": "I100002"
                   }
+   
    DELETE: DELETE
-        - 
+        - http://localhost:8080/book/{id}
+        
+        
+   CHECKOUT: GET:  http://localhost:8080/book/{id}/{discount or promocode}
+   
+   
